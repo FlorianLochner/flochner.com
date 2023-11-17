@@ -16,16 +16,17 @@ class ArrayList extends Array {
     }
 }
 
-// [processing-p5-convert] import java.util.*;
 let colors = new Array(2);
 let alpha = 0.2;
 let N = 5;
 let maxPosX = new ArrayList();
 let maxPosY = new ArrayList();
+
 function setup() {
-    createCanvas(1920, 1080);
+    canvas = createCanvas(windowWidth, windowHeight);
     colors[0] = color(0, 255, 0);
     colors[1] = color(0, 0, 255);
+    canvas.parent('sketch-holder');
     noLoop();
 }
 function draw() {
@@ -44,7 +45,6 @@ function draw() {
             );
         }
     }
-    //save("Branch2.png");
 }
 function make_branch(deg, nr, pos, v) {
     let alpha0 = PI * Math.random() * (2 * alpha) - alpha;
@@ -99,3 +99,10 @@ function make_leafe(pos, v, lineStrength) {
     rotate(-rotv - PI * 0.5);
     translate(-pos.x, -pos.y);
 }
+
+function mouseClicked() {
+    draw();
+  }
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+  }
