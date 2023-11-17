@@ -100,7 +100,7 @@ function make_leafe(pos, v, lineStrength) {
     translate(-pos.x, -pos.y);
 }
 
-function mouseClicked() {
+function mouseReleased() {
     draw();
   }
 function windowResized() {
